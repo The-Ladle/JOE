@@ -345,46 +345,46 @@ int main( int argc, char** argv )
         int found = 0;
         buf[2] = fgetc( f );
 
-        if(( found = !strncmp( "moo", buf, 3 ) ))
+        if(( found = !strncmp( "joe", buf, 3 ) ))
             program.push_back( 0 );
-        else if(( found = !strncmp( "mOo", buf, 3 ) ))
+        else if(( found = !strncmp( "jOe", buf, 3 ) ))
             program.push_back( 1 );
-        else if(( found = !strncmp( "moO", buf, 3 ) ))
+        else if(( found = !strncmp( "joE", buf, 3 ) ))
             program.push_back( 2 );
-        else if(( found = !strncmp( "mOO", buf, 3 ) ))
+        else if(( found = !strncmp( "jOE", buf, 3 ) ))
             program.push_back( 3 );
-        else if(( found = !strncmp( "Moo", buf, 3 ) ))
+        else if(( found = !strncmp( "Joe", buf, 3 ) ))
             program.push_back( 4 );
-        else if(( found = !strncmp( "MOo", buf, 3 ) ))
+        else if(( found = !strncmp( "JOe", buf, 3 ) ))
             program.push_back( 5 );
-        else if(( found = !strncmp( "MoO", buf, 3 ) ))
+        else if(( found = !strncmp( "JoE", buf, 3 ) ))
             program.push_back( 6 );
-        else if(( found = !strncmp( "MOO", buf, 3 ) ))
+        else if(( found = !strncmp( "JOE", buf, 3 ) ))
             program.push_back( 7 );
         else if(( found = !strncmp( "OOO", buf, 3 ) ))
             program.push_back( 8 );
-        else if(( found = !strncmp( "MMM", buf, 3 ) ))
+        else if(( found = !strncmp( "JJJ", buf, 3 ) ))
             program.push_back( 9 );
-        else if(( found = !strncmp( "OOM", buf, 3 ) ))
+        else if(( found = !strncmp( "EOJ", buf, 3 ) ))
             program.push_back( 10 );
-        else if(( found = !strncmp( "oom", buf, 3 ) ))
+        else if(( found = !strncmp( "eoj", buf, 3 ) ))
             program.push_back( 11 );
         // from here down,  distributed digestion specific calls
-        else if(( found = !strncmp( "MMm", buf, 3 ) ))
+        else if(( found = !strncmp( "JJj", buf, 3 ) ))
             program.push_back( 12 );
-        else if(( found = !strncmp( "MmM", buf, 3 ) ))
+        else if(( found = !strncmp( "JjJ", buf, 3 ) ))
             program.push_back( 13 );
-        else if(( found = !strncmp( "Oom", buf, 3 ) ))
+        else if(( found = !strncmp( "Eoj", buf, 3 ) ))
             program.push_back( 14 );
-        else if(( found = !strncmp( "oOm", buf, 3 ) ))
+        else if(( found = !strncmp( "eOj", buf, 3 ) ))
             program.push_back( 15 );
-        else if(( found = !strncmp( "OoM", buf, 3 ) ))
+        else if(( found = !strncmp( "EoJ", buf, 3 ) ))
             program.push_back( 16 );
-        else if(( found = !strncmp( "oOM", buf, 3 ) ))
+        else if(( found = !strncmp( "eOJ", buf, 3 ) ))
             program.push_back( 17 );
         else if(( found = !strncmp( "ooo", buf, 3 ) ))
             program.push_back( 18 );
-        else if(( found = !strncmp( "mmm", buf, 3 ) ))
+        else if(( found = !strncmp( "jjj", buf, 3 ) ))
             program.push_back( 19 );
             
         if( found )
