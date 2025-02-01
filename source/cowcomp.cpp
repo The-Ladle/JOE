@@ -81,7 +81,7 @@ bool compile( int instruction, bool advance )
             moocount++;
             fprintf( output, "goto M%d;", num );
             fprintf( output, "m%d:", moocount );
-            PRETTY( "moo" );
+            PRETTY( "joe" );
         }
         break;
 
@@ -89,13 +89,13 @@ bool compile( int instruction, bool advance )
     // mOo
     case 1:
         fprintf( output, "if(p==m.begin()){rterr();}else{p--;}" );
-        PRETTY( "mOo" );
+        PRETTY( "jOe" );
         break;
 
     // moO
     case 2:
         fprintf( output, "p++; if(p==m.end()){m.push_back(0);p=m.end();p--;}" );
-        PRETTY( "moO" );
+        PRETTY( "joE" );
         break;
     
     // mOO    
@@ -117,25 +117,25 @@ bool compile( int instruction, bool advance )
         fprintf( output, "case 10:{" ); compile( 10, false ); fprintf( output, "}break;" );
         fprintf( output, "case 11:{" ); compile( 11, false ); fprintf( output, "}break;" );
         fprintf( output, "default:{goto x;}};" );
-        PRETTY( "mOO" );
+        PRETTY( "jOE" );
         break;
     
     // Moo
     case 4:
         fprintf( output, "if((*p)!=0){putchar(*p);}else{(*p)=getchar();while(getchar()!='\\n');}" );
-        PRETTY( "Moo" );
+        PRETTY( "Joe" );
         break;
     
     // MOo
     case 5:
         fprintf( output, "(*p)--;" );
-        PRETTY( "MOo" );
+        PRETTY( "JOe" );
         break;
     
     // MoO
     case 6:
         fprintf( output, "(*p)++;" );
-        PRETTY( "MoO" );
+        PRETTY( "JoE" );
         break;
 
     // MOO
@@ -187,7 +187,7 @@ bool compile( int instruction, bool advance )
             MOOcount++;
             fprintf( output, "M%d:", MOOcount );
             fprintf( output, "if(!(*p))goto m%d;", num );
-            PRETTY( "MOO" );
+            PRETTY( "JOE" );
         }
         break;
     
@@ -200,13 +200,13 @@ bool compile( int instruction, bool advance )
     // MMM
     case 9:
         fprintf( output, "if(h){(*p)=r;}else{r=(*p);}h=!h;" );
-        PRETTY( "MMM" );
+        PRETTY( "JJJ" );
         break;
 
     // OOM
     case 10:
         fprintf( output, "printf(\"%%d\\n\",*p);" );
-        PRETTY( "OOM" );
+        PRETTY( "EOJ" );
         break;
     
     // oom
@@ -214,7 +214,7 @@ bool compile( int instruction, bool advance )
         fprintf( output, "char b[100];int c=0;" );
         fprintf( output, "while(c<sizeof(b)-1){b[c]=getchar();c++;b[c]=0;if(b[c-1]=='\\n')break;}" );
         fprintf( output, "if(c==sizeof(b))while(getchar()!='\\n');(*p)=atoi(b);" );
-        PRETTY( "oom" );
+        PRETTY( "eoj" );
         break;
 
     // bad stuff
@@ -254,29 +254,29 @@ int main( int argc, char** argv )
         int found = 0;
         buf[2] = fgetc( f );
 
-        if( found = !strncmp( "moo", buf, 3 ) )
+        if( found = !strncmp( "joe", buf, 3 ) )
             program.push_back( 0 );
-        else if( found = !strncmp( "mOo", buf, 3 ) )
+        else if( found = !strncmp( "jOe", buf, 3 ) )
             program.push_back( 1 );
-        else if( found = !strncmp( "moO", buf, 3 ) )
+        else if( found = !strncmp( "joE", buf, 3 ) )
             program.push_back( 2 );
-        else if( found = !strncmp( "mOO", buf, 3 ) )
+        else if( found = !strncmp( "jOE", buf, 3 ) )
             program.push_back( 3 );
-        else if( found = !strncmp( "Moo", buf, 3 ) )
+        else if( found = !strncmp( "Joe", buf, 3 ) )
             program.push_back( 4 );
-        else if( found = !strncmp( "MOo", buf, 3 ) )
+        else if( found = !strncmp( "JOe", buf, 3 ) )
             program.push_back( 5 );
-        else if( found = !strncmp( "MoO", buf, 3 ) )
+        else if( found = !strncmp( "JoE", buf, 3 ) )
             program.push_back( 6 );
-        else if( found = !strncmp( "MOO", buf, 3 ) )
+        else if( found = !strncmp( "JOE", buf, 3 ) )
             program.push_back( 7 );
         else if( found = !strncmp( "OOO", buf, 3 ) )
             program.push_back( 8 );
-        else if( found = !strncmp( "MMM", buf, 3 ) )
+        else if( found = !strncmp( "JJJ", buf, 3 ) )
             program.push_back( 9 );
-        else if( found = !strncmp( "OOM", buf, 3 ) )
+        else if( found = !strncmp( "EOJ", buf, 3 ) )
             program.push_back( 10 );
-        else if( found = !strncmp( "oom", buf, 3 ) )
+        else if( found = !strncmp( "eoj", buf, 3 ) )
             program.push_back( 11 );
             
         if( found )
